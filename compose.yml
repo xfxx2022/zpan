@@ -1,0 +1,13 @@
+services:
+  foo:
+    image: qdtoday/qd:latest
+    volumes:
+      - ./etc/zpan:/etc/zpan
+    deploy:
+      resources:
+        limits:
+          memory: 4000M
+x-uffizzi:
+  ingress:
+    service: foo
+    port: 8080
